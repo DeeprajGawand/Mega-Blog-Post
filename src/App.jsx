@@ -10,6 +10,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const dispatch = useDispatch()
 
+  // initially if user open the page if user is present it will login if not it will logout
   useEffect(() => {
     authService.getCurrentUser()
     .then((userData) => {
@@ -27,7 +28,7 @@ function App() {
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
       <div className='w-full block'>
         <Header />
-        Todo:
+        Todo: <Outlet/>
         <Footer />
       </div>
     </div>
